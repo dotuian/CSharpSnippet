@@ -15,7 +15,16 @@ namespace ConsoleApp.F
 
         public static void Main(string[] args)
         {
-            Type t = typeof(F3);
+            // 1，通过typeof获取数据类型
+            //Type t = typeof(F3);
+
+            // 2，通过对象的GetType方法获取数据类型
+            // F3 obj = new F3();
+            // Type t = obj.GetType();
+
+            // 3，通过对象的Type.GetType方法获取数据类型
+            Type t = Type.GetType("ConsoleApp.F.F3");
+
             MemberInfo[] info1 = t.GetMembers();
             foreach (MemberInfo menber in info1) {
                 Console.WriteLine(menber.ToString());
